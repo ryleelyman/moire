@@ -43,35 +43,55 @@ This next bit appears to be boilerplate.
       ,name
       ,description
       ,palette
-      ((default             (:background moire-dark5 :foreground moire-light6))
-       (cursor              (:background moire-red))
-       (mode-line           (:background moire-dark5 :foreground moire-light4 :box nil))
-       (mode-line-inactive  (:background moire-dark6 :foreground moire-light2 :box nil))
-       (fringe              (:background moire-dark4))
-       (hl-region           (:background moire-dark1))
-       (region              (:background moire-dark2))
-       (secondary-selection (:background moire-dark3))
-       (minibuffer-prompt   (:foreground moire-green :bold t))
-       (vertical-border     (:foreground moire-dark2))
-       (internal-border     (:background moire-dark3))
-       (window-divider      (:foreground moire-dark3))
+      ((default             (:background moire-floor :foreground moire-text))
+       (default-italic      (:slant 'italic))
+       (cursor              (:background moire-red :foreground moire-dirt))
+       (mode-line           (:background moire-dirt :foreground moire-subtext :box nil))
+       (mode-line-inactive  (:background moire-dirt :foreground moire-comment :box nil))
+       (header-line         (:inherit 'mode-line))
+       (fringe              (:background moire-dirt))
+       (hl-region           (:background moire-table))
+       (hl-todo             (:foreground moire-peach))
+       (region              (:background moire-desk))
+       (secondary-selection (:background moire-linoleum))
+       (minibuffer-window   (:background moire-ground))
+       (minibuffer-prompt   (:background moire-ground :bold t))
+       (vertical-border     (:foreground moire-ground))
+       (internal-border     (:background moire-table))
+       (window-divider      (:foreground moire-table))
        (link                (:foreground moire-royal :underline t))
-       (shadow              (:foreground moire-light1))
+       (shadow              (:foreground moire-comment))
+       (success             (:foreground moire-green))
+       (warning             (:foreground moire-yellow))
 
        ;;; syntax hl
 
-       (font-lock-builtin-face           (:foreground moire-pink))
-       (font-lock-constant-face          (:foreground moire-lavender))
-       (font-lock-comment-face           (:foreground moire-light1 :italic t))
+       (font-lock-builtin-face           (:foreground moire-red))
+       (font-lock-constant-face          (:foreground moire-peach))
+       (font-lock-comment-face           (:foreground moire-comment :slant 'italic))
+       (font-lock-comment-delimiter-face (:foreground moire-subtext))
+       (font-lock-doc-face               (:foreground moire-subtext))
+       (font-lock-doc-markup-face        (:foreground moire-clay))
        (font-lock-function-name-face     (:foreground moire-blue))
        (font-lock-function-call-face     (:foreground moire-blue))
-       (font-lock-keyword-face           (:foreground moire-mauve :bold t))
+       (font-lock-keyword-face           (:foreground moire-mauve :weight 'bold))
        (font-lock-string-face            (:foreground moire-green))
-       (font-lock-variable-name-face     (:foreground moire-pink :italic t))
+       (font-lock-variable-name-face     (:foreground moire-mauve :slant 'italic))
        (font-lock-type-face              (:foreground moire-yellow))
-       (font-lock-property-name-face     (:foreground moire-denim))
-       (font-lock-property-use-face      (:foreground moire-denim))
-       (font-lock-warning-face           (:foreground moire-red))
+       (font-lock-property-name-face     (:foreground moire-lavender))
+       (font-lock-property-use-face      (:foreground moire-lavender))
+       (font-lock-warning-face           (:inherit 'warning))
+       (font-lock-negation-char-face     (:foreground moire-pink))
+       (font-lock-preprocessor-face      (:foreground moire-yellow))
+       (font-lock-regexp-face            (:foreground moire-peach))
+       (font-lock-regexp-grouping-backslash (:foreground moire-teal :weight 'bold))
+       (font-lock-regexp-grouping-construct (:foreground moire-teal :weight 'bold))
+       (font-lock-escape-face            (:inherit 'font-lock-regexp-grouping-construct))
+       (font-lock-operator-face          (:foreground moire-denim))
+       (font-lock-punctuation-face       (:foreground moire-subtext))
+       (font-lock-bracket-face           (:foreground moire-subtext))
+       (font-lock-delimiter-face         (:foreground moire-subtext))
+       (font-lock-misc-punctuation-face  (:foreground moire-subtext))
 
        ;;; basic faces
 
@@ -81,42 +101,42 @@ This next bit appears to be boilerplate.
        (alert-low-face      (:foreground moire-denim))
        (trailing-whitespace (:background moire-clay))
        (escape-glyph        (:foreground moire-pink))
-       (header-line         (:background moire-dark3 :foreground moire-light3 :box nil :inherit nil))
-       (highlight           (:background moire-dark4 :foreground moire-light6))
+       (header-line         (:background moire-ground :foreground moire-subtext :box nil :inherit nil))
+       (highlight           (:background moire-linoleum :foreground moire-text))
        (homoglyph           (:foreground moire-yellow))
-       (match               (:foreground moire-light6 :background moire-indigo))
+       (match               (:foreground moire-text :background moire-chartreuse))
 
        ;;; customize
 
-       (widget-field        (:background moire-dark3))
+       (widget-field        (:background moire-sofa))
        (custom-group-tag    (:foreground moire-blue :weight 'bold))
        (custom-variable-tag (:foreground moire-blue :weight 'bold))
 
        ;;; whitespace-mode
 
-       (whitespace-space            (:background moire-dark6 :foreground moire-dark1))
-       (whitespace-hspace           (:background moire-dark6 :foreground moire-dark1))
-       (whitespace-tab              (:background moire-dark6 :foreground moire-dark1))
-       (whitespace-newline          (:background moire-dark5 :foreground moire-red))
-       (whitespace-trailing         (:background moire-dark5 :foreground moire-red))
-       (whitespace-space-before-tab (:background moire-dark6 :foreground moire-dark1))
-       (whitespace-indentation      (:background moire-dark6 :foreground moire-dark1))
-       (whitespace-space-after-tab  (:background moire-dark6 :foreground moire-dark1))
+       (whitespace-space            (:background moire-linoleum :foreground moire-subtext))
+       (whitespace-hspace           (:background moire-linoleum :foreground moire-subtext))
+       (whitespace-tab              (:background moire-linoleum :foreground moire-subtext))
+       (whitespace-newline          (:background moire-linoleum :foreground moire-red))
+       (whitespace-trailing         (:background moire-linoleum :foreground moire-red))
+       (whitespace-space-before-tab (:background moire-linoleum :foreground moire-subtext))
+       (whitespace-indentation      (:background moire-linoleum :foreground moire-subtext))
+       (whitespace-space-after-tab  (:background moire-linoleum :foreground moire-subtext))
 
        ;;; line numbers
 
-       (line-number                     (:foreground moire-light1 :background moire-dark6))
-       (line-number-current-line        (:foreground moire-clay :background moire-dark6))
-       (linum                           (:foreground moire-light1 :background moire-dark6))
-       (linum-highlight-face            (:foreground moire-clay :background moire-dark6))
-       (linum-relative-current-face     (:foreground moire-clay :background moire-dark6))
+       (line-number                     (:foreground moire-comment :background moire-ground))
+       (line-number-current-line        (:foreground moire-clay :background moire-ground))
+       (linum                           (:foreground moire-comment :background moire-ground))
+       (linum-highlight-face            (:foreground moire-clay :background moire-ground))
+       (linum-relative-current-face     (:foreground moire-clay :background moire-ground))
 
        ;;; Diffs
 
-       (diff-header            (:background moire-dark3))
-       (diff-file-header       (:background moire-dark4))
-       (diff-hunk-header       (:background moire-dark2))
-       (diff-context           (:background moire-dark2 :foreground moire-light2))
+       (diff-header            (:background moire-carpet))
+       (diff-file-header       (:background moire-carpet))
+       (diff-hunk-header       (:background moire-carpet))
+       (diff-context           (:background moire-carpet :foreground moire-subtext))
        (diff-added             (:background 'unspecified :foreground moire-green))
        (diff-refine-added      (:background 'unspecified :foreground moire-teal))
        (diff-removed           (:background 'unspecified :foreground moire-red))
@@ -127,53 +147,53 @@ This next bit appears to be boilerplate.
 
        ;;; popup
 
-       (popup-face                (:underline nil :foreground moire-light5 :background moire-dark1))
-       (popup-menu-mouse-face     (:underline nil :foreground moire-mauve :background moire-dark1))
-       (popup-menu-selection-face (:underline nil :foregound moire-mauve :background moire-dark1))
-       (popup-tip-face            (:underline nil :foregound moire-light4 :background moire-dark1))
+       (popup-face                (:underline nil :foreground moire-text :background moire-desk))
+       (popup-menu-mouse-face     (:underline nil :foreground moire-mauve :background moire-desk))
+       (popup-menu-selection-face (:underline nil :foreground moire-mauve :background moire-sofa))
+       (popup-tip-face            (:underline nil :foreground moire-subtext :background moire-desk))
 
        ;;; tooltip
 
-       (tooltip (:foreground moire-light5 :background moire-dark1))
+       (tooltip (:foreground moire-subtext :background moire-desk))
 
        ;;; corfu
 
        (corfu-default (:inherit 'tooltip))
-       (corfu-current (:foreground moire-mauve :background moire-dark1))
-       (corfu-bar (:background moire-dark2))
-       (corfu-border (:background moire-dark3))
+       (corfu-current (:foreground moire-mauve :background moire-sofa))
+       (corfu-bar (:background moire-desk))
+       (corfu-border (:background moire-table))
 
        ;;; term
-       (term-color-black    (:foreground moire-light1 :background moire-dark6))
+       (term-color-black    (:foreground moire-dirt :background moire-dirt))
        (term-color-blue     (:foreground moire-blue :background moire-blue))
        (term-color-red      (:foreground moire-red :background moire-red))
        (term-color-cyan     (:foreground moire-teal :background moire-teal))
        (term-color-green    (:foreground moire-green :background moire-green))
        (term-color-magenta  (:foreground moire-mauve :background moire-mauve))
-       (term-color-white    (:foreground moire-light6 :background moire-light6))
-       (term-default-fg-color (:foreground moire-light5))
-       (term-default-bg-color (:background moire-dark5))
+       (term-color-white    (:foreground moire-text :background moire-text))
+       (term-default-fg-color (:foreground moire-text))
+       (term-default-bg-color (:background moire-floor))
 
        ;;; org-mode
 
-       (org-hide                 (:foreground moire-light1))
-       (org-level-1              (:foreground moire-pink))
-       (org-level-2              (:foreground moire-mauve))
-       (org-level-3              (:foreground moire-peach))
-       (org-level-4              (:foreground moire-clay))
-       (org-level-5              (:foreground moire-yellow))
-       (org-level-6              (:foreground moire-green))
+       (org-hide                 (:foreground moire-subtext))
+       (org-level-1              (:foreground moire-pink :height 1.3))
+       (org-level-2              (:foreground moire-mauve :height 1.2))
+       (org-level-3              (:foreground moire-subtext :height 1.2))
+       (org-level-4              (:foreground moire-clay :height 1.1))
+       (org-level-5              (:foreground moire-yellow :height 1.1))
+       (org-level-6              (:foreground moire-chartreuse))
        (org-level-7              (:foreground moire-teal))
-       (org-level-8              (:foreground moire-denim))
+       (org-level-8              (:foreground moire-green))
        (org-special-keyword      (:inherit 'font-lock-comment-face))
        (org-drawer               (:inherit 'font-lock-function-name-face))
-       (org-column               (:background moire-dark6))
-       (org-column-title         (:background moire-dark6 :underline t :weight 'bold))
+       (org-column               (:background moire-rug))
+       (org-column-title         (:background moire-rug :underline t :weight 'bold))
        (org-warning              (:foreground moire-red :weight 'bold :underline nil))
-       (org-archived             (:foreground moire-light1 :weight 'bold))
+       (org-archived             (:foreground moire-subtext :weight 'bold))
        (org-link                 (:inherit 'link))
        (org-footnote             (:foreground moire-teal :underline t))
-       (org-ellipsis             (:foreground moire-light2))
+       (org-ellipsis             (:foreground moire-subtext))
        (org-date                 (:foreground moire-blue :underline t))
        (org-sexp-date            (:foreground moire-blue :underline t))
        (org-tag                  (:weight 'bold))
@@ -182,14 +202,14 @@ This next bit appears to be boilerplate.
        (org-done                 (:foreground moire-teal :weight 'bold))
        (org-agenda-done          (:foreground moire-teal))
        (org-headline-done        (:foreground moire-teal))
-       (org-table                (:foreground moire-blue))
-       (org-block                (:background moire-dark6))
-       (org-block-begin-line     (:background moire-dark5))
-       (org-block-end-line       (:background moire-dark5))
+       (org-table                (:foreground moire-subtext))
+       (org-block                (:background moire-carpet))
+       (org-block-begin-line     (:background moire-rug))
+       (org-block-end-line       (:background moire-rug))
        (org-document-info        (:foreground moire-blue))
        (org-document-title       (:foreground moire-blue))
        (org-agenda-structure     (:inherit 'font-lock-comment-face))
-       (org-agenda-date-today    (:foreground moire-light6 :weight 'bold :slant 'italic))
+       (org-agenda-date-today    (:foreground moire-text :weight 'bold :slant 'italic))
        (org-scheduled            (:foreground moire-yellow))
        (org-scheduled-today      (:foreground moire-denim))
        (org-scheduled-previously (:foreground moire-peach))
@@ -200,8 +220,8 @@ This next bit appears to be boilerplate.
 
        ;;; show-paren
 
-       (show-paren-match    (:background moire-dark3 :foreground moire-blue :weight 'bold))
-       (show-paren-mismatch (:background moire-red :foreground moire-dark3 :weight 'bold))
+       (show-paren-match    (:background moire-sofa :foreground moire-blue :weight 'bold))
+       (show-paren-mismatch (:background moire-red :foreground moire-sofa :weight 'bold))
 
        ;;; orderless
 
@@ -215,7 +235,7 @@ This next bit appears to be boilerplate.
        (magit-bisect-bad                          (:foreground moire-red))
        (magit-bisect-good                         (:foreground moire-green))
        (magit-bisect-skip                         (:foreground moire-clay))
-       (magit-blame-heading                       (:foreground moire-light6 :background moire-dark6))
+       (magit-blame-heading                       (:foreground moire-text :background moire-floor))
        (magit-branch-local                        (:foreground moire-blue))
        (magit-branch-current                      (:underline moire-denim :inherit 'magit-branch-local))
        (magit-branch-remote                       (:foreground moire-green))
@@ -223,23 +243,23 @@ This next bit appears to be boilerplate.
        (magit-cherry-unmatched                    (:foreground moire-teal))
        (magit-diff-added                          (:foreground moire-green))
        (magit-diff-added-highlight                (:foreground moire-green :inherit 'magit-diff-context-highlight))
-       (magit-diff-base                           (:background moire-dark1 :foreground moire-light6))
-       (magit-diff-base-highlight                 (:background moire-dark1 :foreground moire-light6))
-       (magit-diff-context                        (:background moire-dark4  :foreground moire-light5))
-       (magit-diff-context-highlight              (:background moire-dark4 :foreground moire-light6))
-       (magit-diff-hunk-heading                   (:background moire-dark5 :foreground moire-light5))
-       (magit-diff-hunk-heading-highlight         (:background moire-dark5 :foreground moire-light6))
-       (magit-diff-hunk-heading-selection         (:background moire-dark3 :foreground moire-peach))
-       (magit-diff-lines-heading                  (:background moire-dark3 :foreground moire-light6))
+       (magit-diff-base                           (:background moire-carpet :foreground moire-text))
+       (magit-diff-base-highlight                 (:background moire-carpet :foreground moire-subtext))
+       (magit-diff-context                        (:background moire-carpet :foreground moire-text))
+       (magit-diff-context-highlight              (:background moire-carpet :foreground moire-subtext))
+       (magit-diff-hunk-heading                   (:background moire-carpet :foreground moire-text))
+       (magit-diff-hunk-heading-highlight         (:background moire-carpet :foreground moire-text))
+       (magit-diff-hunk-heading-selection         (:background moire-carpet :foreground moire-peach))
+       (magit-diff-lines-heading                  (:background moire-carpet :foreground moire-text))
        (magit-diff-removed                        (:foreground moire-red))
        (magit-diff-removed-highlight              (:foreground moire-red :inherit 'magit-diff-context-highlight))
        (magit-diffstat-added                      (:foreground moire-green))
        (magit-diffstat-removed                    (:foreground moire-red))
-       (magit-dimmed                              (:foreground moire-light4))
+       (magit-dimmed                              (:foreground moire-subtext))
        (magit-hash                                (:foreground moire-denim))
        (magit-log-author                          (:foreground moire-mauve))
        (magit-log-date                            (:foreground moire-teal))
-       (magit-log-graph                           (:foreground moire-light4))
+       (magit-log-graph                           (:foreground moire-subtext))
        (magit-process-ng                          (:foreground moire-red :weight 'bold))
        (magit-process-ok                          (:foreground moire-green :weight 'bold))
        (magit-reflog-amend                        (:foreground moire-lavender))
@@ -251,10 +271,10 @@ This next bit appears to be boilerplate.
        (magit-reflog-rebase                       (:foreground moire-lavender))
        (magit-reflog-remote                       (:foreground moire-denim))
        (magit-reflog-reset                        (:foreground moire-red))
-       (magit-refname                             (:foreground moire-light4))
+       (magit-refname                             (:foreground moire-subtext))
        (magit-section-heading                     (:foreground moire-yellow :weight 'bold))
        (magit-section-heading-selection           (:foreground moire-clay))
-       (magit-section-highlight                   (:background moire-dark3))
+       (magit-section-highlight                   (:background moire-rug))
        (magit-sequence-drop                       (:foreground moire-clay))
        (magit-sequence-head                       (:foreground moire-teal))
        (magit-sequence-part                       (:foreground moire-yellow))
@@ -291,7 +311,7 @@ This next bit appears to be boilerplate.
        (font-latex-sectioning-3-face (:inherit 'org-level-3))
        (font-latex-sectioning-4-face (:inherit 'org-level-4))
        (font-latex-sectioning-5-face (:inherit 'org-level-5))
-       (font-latex-sedate-face       (:foreground moire-light5))
+       (font-latex-sedate-face       (:foreground moire-subtext))
        (font-latex-string-face       (:foreground moire-green))
        (font-latex-verbatim-face     (:inherit 'font-lock-builtin-face))
        (font-latex-warning-face      (:inherit 'warning))
@@ -306,26 +326,26 @@ This next bit appears to be boilerplate.
 
        (widget-button-pressed-face (:foreground moire-pink))
        (widget-documentation-face  (:foreground moire-green))
-       (widget-field               (:foreground moire-light6 :background moire-dark3))
-       (widget-single-line-field   (:foreground moire-light6 :background moire-dark3))
+       (widget-field               (:foreground moire-subtext :background moire-carpet))
+       (widget-single-line-field   (:foreground moire-subtext :background moire-carpet))
 
        ;;; eshell
-     
+
        (eshell-prompt                              (:foreground moire-teal))
-       (eshell-ls-archive                          (:foreground moire-light4))
-       (eshell-ls-backup                           (:foreground moire-light3))
+       (eshell-ls-archive                          (:foreground moire-subtext))
+       (eshell-ls-backup                           (:foreground moire-subtext))
        (eshell-ls-clutter                          (:foreground moire-clay :weight 'bold))
        (eshell-ls-directory                        (:foreground moire-yellow))
        (eshell-ls-executable                       (:weight 'bold))
        (eshell-ls-missing                          (:foreground moire-red :bold t))
        (eshell-ls-product                          (:foreground moire-peach))
-       (eshell-ls-readonly                         (:foreground moire-light2))
+       (eshell-ls-readonly                         (:foreground moire-subtext))
        (eshell-ls-special                          (:foreground moire-yellow :bold t))
        (eshell-ls-symlink                          (:foreground moire-clay))
        (eshell-ls-unreadable                       (:foreground moire-red :bold t))
 
        ;;; flycheck
-     
+
        (flycheck-warning                          (:underline (:style 'wave :color moire-yellow)))
        (flycheck-error                            (:underline (:style 'wave :color moire-red)))
        (flycheck-info                             (:underline (:style 'wave :color moire-royal)))
@@ -338,78 +358,102 @@ This next bit appears to be boilerplate.
 
        ;;; vertico
 
-       (vertico-posframe            (:background moire-dark6))
-       (vertico-posframe-border     (:background moire-dark5))
-       (vertico-posframe-border-2   (:background moire-dark4))
-       (vertico-posframe-border-3   (:background moire-dark3))
-       (vertico-posframe-border-4   (:background moire-dark2))
+       (vertico-posframe            (:background moire-ground))
+       (vertico-posframe-border     (:background moire-dirt))
+       (vertico-posframe-border-2   (:background moire-ground))
+       (vertico-posframe-border-3   (:background moire-floor))
+       (vertico-posframe-border-4   (:background moire-carpet))
 
        ;;; ansi-color
 
-       (ansi-color-black          (:foreground moire-dark5  :background moire-dark5))
+       (ansi-color-black          (:foreground moire-floor  :background moire-floor))
        (ansi-color-red            (:foreground moire-peach  :background moire-peach))
        (ansi-color-green          (:foreground moire-green  :background moire-green))
        (ansi-color-yellow         (:foreground moire-clay   :background moire-clay))
        (ansi-color-blue           (:foreground moire-royal  :background moire-royal))
        (ansi-color-magenta        (:foreground moire-mauve  :background moire-mauve))
        (ansi-color-cyan           (:foreground moire-teal   :background moire-teal))
-       (ansi-color-white          (:foreground moire-light5 :background moire-light5))
-       (ansi-color-bright-black   (:foreground moire-dark6  :background moire-dark6))
+       (ansi-color-white          (:foreground moire-subtext :background moire-subtext))
+       (ansi-color-bright-black   (:foreground moire-dirt  :background moire-dirt))
        (ansi-color-bright-red     (:foreground moire-red    :background moire-red))
        (ansi-color-bright-green   (:foreground moire-green  :background moire-green))
        (ansi-color-bright-yellow  (:foreground moire-yellow :background moire-yellow))
        (ansi-color-bright-blue    (:foreground moire-denim  :background moire-denim))
        (ansi-color-bright-magenta (:foreground moire-pink   :background moire-pink))
        (ansi-color-bright-cyan    (:foreground moire-teal   :background moire-teal))
-       (ansi-color-bright-white   (:foreground moire-light6 :background moire-light6))
+       (ansi-color-bright-white   (:foreground moire-text :background moire-text))
        )
       ,@body))
 #+end_src
 
 ** Color definition
 
-NB: This table is the absolute source of truth!
-
-#+begin_src shell :tangle no :results none
-  cd ~/src/moire/generate
-  ./script.sh
-  open layout.png
+#+NAME: moire-directory
+#+begin_src emacs-lisp :tangle no
+  (file-name-as-directory (file-name-directory buffer-file-name))
 #+end_src
 
+#+begin_src shell :tangle no :results none :noweb yes
+    cd <<moire-directory()>>/generate
+    ./script.sh
+    open layout.png
+#+end_src
+
+#+begin_src emacs-lisp :tangle no :var col1=moire-colors[25,1] :var col2=moire-colors[10,1] :var m=0.85 
+  (defun mix-with-param (color1 color2 mix)
+    "interpolates between color1 and color2 according to mix"
+    (let ((i 1)
+          (str "#"))
+      (while (<= i 5)
+        (setq str
+              (concat str
+                      (format "%02x"
+                              (round (+ (* mix (string-to-number (substring color1 i (+ i 2)) 16))
+                                        (* (- 1 mix) (string-to-number (substring color2 i (+ i 2)) 16)))))))
+        (setq i (+ i 2)))
+      str))
+  (mix-with-param col1 col2 m)
+#+end_src
+
+#+RESULTS:
+: #8e52ad
+
+NB: This table is the absolute source of truth!
+
   #+NAME: moire-colors
-  | dark6    | #191922 |
-  | dark5    | #1a1e28 |
-  | dark4    | #23242f |
-  | dark3    | #2f2c28 |
-  | dark2    | #35332d |
-  | dark1    | #47413b |
-  | light1   | #786569 |
-  | light2   | #6c5a5f |
-  | light3   | #86727a |
-  | light4   | #a5899a |
-  | light5   | #bfa1b5 |
-  | light6   | #eecde4 |
-  | red      | #e1346d |
-  | mauve    | #cf50cc |
-  | pink     | #f57ed1 |
-  | peach    | #e88b53 |
-  | clay     | #d59b84 |
-  | yellow   | #e6bf56 |
-  | green    | #90ba56 |
-  | teal     | #60cca7 |
-  | denim    | #a2f1f9 |
-  | royal    | #758fc6 |
-  | blue     | #8070fd |
-  | indigo   | #615dbb |
-  | lavender | #ab88d8 |
-  | purple   | #8544ac |
+  | dirt       | #090912 |
+  | ground     | #1a1e28 |
+  | floor      | #221f2a |
+  | carpet     | #1d1b26 |
+  | rug        | #2d2834 |
+  | linoleum   | #312e39 |
+  | table      | #4c4552 |
+  | desk       | #605765 |
+  | sofa       | #6a5f6e |
+  | comment    | #a5899a |
+  | subtext    | #bfa1b5 |
+  | text       | #eecde4 |
+  | red        | #e45385 |
+  | mauve      | #d463d0 |
+  | pink       | #f48ad4 |
+  | peach      | #e99569 |
+  | clay       | #d9a292 |
+  | yellow     | #e7c16b |
+  | chartreuse | #bcbe60 |
+  | green      | #97b664 |
+  | teal       | #6ec6a9 |
+  | denim      | #a6e5ef |
+  | royal      | #758fc6 |
+  | blue       | #8994c1 |
+  | lavender   | #ae8cd3 |
+  | purple     | #8e52ad |
 
   I'd rather quantize in the writing step, rather than on a user's machine.
 
-  #+NAME: tru-colors-list
-  #+begin_src emacs-lisp :tangle no :var tab=moire-colors[,1] :var num=1
+#+NAME: tru-colors-list
+#+begin_src emacs-lisp :tangle no :var tab=moire-colors[,1] :var num=1
     (nth num tab)
-  #+end_src
+#+end_src
   
 #+NAME: moire-colors-quantized
 #+begin_src emacs-lisp :tangle no :var tab=moire-colors[,1]
@@ -431,16 +475,10 @@ NB: This table is the absolute source of truth!
     (mapcar 'quantize-to-256-colors tab)
 #+end_src
 
-#+RESULTS: moire-colors-quantized
-| #cc5555 | #eeaadd | #88bbdd | #6699bb | #3366aa | #2233aa |
-
 #+NAME: 256-colors-list
 #+begin_src emacs-lisp :tangle no :var tab=moire-colors-quantized :var num=0
   (nth num tab)
 #+end_src
-
-#+RESULTS: 256-colors-list
-: #cc5555
 
 #+begin_src emacs-lisp :noweb yes
     (moire-deftheme
@@ -448,72 +486,72 @@ NB: This table is the absolute source of truth!
      "A moody pastel theme"
      ((((class color) (min-colors #xFFFFFF))
        ((class color) (min-colors #xFF)))
-      (moire-dark6      "<<tru-colors-list(num=0)>>"  "<<256-colors-list(num=0)>>")
-      (moire-dark5      "<<tru-colors-list(num=1)>>"  "<<256-colors-list(num=1)>>")
-      (moire-dark4      "<<tru-colors-list(num=2)>>"  "<<256-colors-list(num=2)>>")
-      (moire-dark3      "<<tru-colors-list(num=3)>>"  "<<256-colors-list(num=3)>>")
-      (moire-dark2      "<<tru-colors-list(num=4)>>"  "<<256-colors-list(num=4)>>")
-      (moire-dark1      "<<tru-colors-list(num=5)>>"  "<<256-colors-list(num=5)>>")
-      (moire-light1     "<<tru-colors-list(num=6)>>"  "<<256-colors-list(num=6)>>")
-      (moire-light2     "<<tru-colors-list(num=7)>>"  "<<256-colors-list(num=7)>>")
-      (moire-light3     "<<tru-colors-list(num=8)>>"  "<<256-colors-list(num=8)>>")
-      (moire-light4     "<<tru-colors-list(num=9)>>"  "<<256-colors-list(num=9)>>")
-      (moire-light5     "<<tru-colors-list(num=10)>>" "<<256-colors-list(num=10)>>")
-      (moire-light6     "<<tru-colors-list(num=11)>>" "<<256-colors-list(num=11)>>")
-      (moire-red        "<<tru-colors-list(num=12)>>" "<<256-colors-list(num=12)>>")
-      (moire-mauve      "<<tru-colors-list(num=13)>>" "<<256-colors-list(num=13)>>")
-      (moire-pink       "<<tru-colors-list(num=14)>>" "<<256-colors-list(num=14)>>")
-      (moire-peach      "<<tru-colors-list(num=15)>>" "<<256-colors-list(num=15)>>")
-      (moire-clay       "<<tru-colors-list(num=16)>>" "<<256-colors-list(num=16)>>")
-      (moire-yellow     "<<tru-colors-list(num=17)>>" "<<256-colors-list(num=17)>>")
-      (moire-green      "<<tru-colors-list(num=18)>>" "<<256-colors-list(num=18)>>")
-      (moire-teal       "<<tru-colors-list(num=19)>>" "<<256-colors-list(num=19)>>")
-      (moire-denim      "<<tru-colors-list(num=20)>>" "<<256-colors-list(num=20)>>")
-      (moire-royal      "<<tru-colors-list(num=21)>>" "<<256-colors-list(num=21)>>")
-      (moire-blue       "<<tru-colors-list(num=22)>>" "<<256-colors-list(num=22)>>")
-      (moire-indigo     "<<tru-colors-list(num=23)>>" "<<256-colors-list(num=23)>>")
-      (moire-lavender   "<<tru-colors-list(num=24)>>" "<<256-colors-list(num=24)>>")
-      (moire-purple     "<<tru-colors-list(num=25)>>" "<<256-colors-list(num=25)>>"))
+      (moire-dirt      "<<tru-colors-list(num=0)>>"  "<<256-colors-list(num=0)>>")
+      (moire-ground    "<<tru-colors-list(num=1)>>"  "<<256-colors-list(num=1)>>")
+      (moire-floor     "<<tru-colors-list(num=2)>>"  "<<256-colors-list(num=2)>>")
+      (moire-carpet    "<<tru-colors-list(num=3)>>"  "<<256-colors-list(num=3)>>")
+      (moire-rug       "<<tru-colors-list(num=4)>>"  "<<256-colors-list(num=4)>>")
+      (moire-linoleum  "<<tru-colors-list(num=5)>>"  "<<256-colors-list(num=5)>>")
+      (moire-table     "<<tru-colors-list(num=6)>>"  "<<256-colors-list(num=6)>>")
+      (moire-desk      "<<tru-colors-list(num=7)>>"  "<<256-colors-list(num=7)>>")
+      (moire-sofa      "<<tru-colors-list(num=8)>>"  "<<256-colors-list(num=8)>>")
+      (moire-comment   "<<tru-colors-list(num=9)>>"  "<<256-colors-list(num=9)>>")
+      (moire-subtext   "<<tru-colors-list(num=10)>>" "<<256-colors-list(num=10)>>")
+      (moire-text      "<<tru-colors-list(num=11)>>" "<<256-colors-list(num=11)>>")
+      (moire-red       "<<tru-colors-list(num=12)>>" "<<256-colors-list(num=12)>>")
+      (moire-mauve     "<<tru-colors-list(num=13)>>" "<<256-colors-list(num=13)>>")
+      (moire-pink      "<<tru-colors-list(num=14)>>" "<<256-colors-list(num=14)>>")
+      (moire-peach     "<<tru-colors-list(num=15)>>" "<<256-colors-list(num=15)>>")
+      (moire-clay      "<<tru-colors-list(num=16)>>" "<<256-colors-list(num=16)>>")
+      (moire-yellow    "<<tru-colors-list(num=17)>>" "<<256-colors-list(num=17)>>")
+      (moire-chartreuse "<<tru-colors-list(num=18)>>" "<<256-colors-list(num=18)>>")
+      (moire-green     "<<tru-colors-list(num=19)>>" "<<256-colors-list(num=19)>>")
+      (moire-teal      "<<tru-colors-list(num=20)>>" "<<256-colors-list(num=20)>>")
+      (moire-denim     "<<tru-colors-list(num=21)>>" "<<256-colors-list(num=21)>>")
+      (moire-royal     "<<tru-colors-list(num=22)>>" "<<256-colors-list(num=22)>>")
+      (moire-blue      "<<tru-colors-list(num=23)>>" "<<256-colors-list(num=23)>>")
+      (moire-lavender  "<<tru-colors-list(num=24)>>" "<<256-colors-list(num=24)>>")
+      (moire-purple    "<<tru-colors-list(num=25)>>" "<<256-colors-list(num=25)>>"))
 
       (custom-theme-set-variables 'moire
                                   `(ansi-color-names-vector
-                                    [,moire-dark6
+                                    [,moire-floor
                                      ,moire-red
                                      ,moire-green
                                      ,moire-yellow
                                      ,moire-blue
                                      ,moire-purple
                                      ,moire-teal
-                                     ,moire-light1])))
+                                     ,moire-text])))
 #+end_src
 
 #+begin_src shell :shebang #!/bin/sh :tangle generate/script.sh :mkdirp yes :noweb yes
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=0)>>" -draw "circle 47.5,47.5 47.5,0" moire-00dark6.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=1)>>" -draw "circle 47.5,47.5 47.5,0" moire-01dark5.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=2)>>" -draw "circle 47.5,47.5 47.5,0" moire-02dark4.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=3)>>" -draw "circle 47.5,47.5 47.5,0" moire-03dark3.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=4)>>" -draw "circle 47.5,47.5 47.5,0" moire-04dark2.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=5)>>" -draw "circle 47.5,47.5 47.5,0" moire-05dark1.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=6)>>" -draw "circle 47.5,47.5 47.5,0" moire-06light1.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=7)>>" -draw "circle 47.5,47.5 47.5,0" moire-07light2.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=8)>>" -draw "circle 47.5,47.5 47.5,0" moire-08light3.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=9)>>" -draw "circle 47.5,47.5 47.5,0" moire-09light4.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=10)>>" -draw "circle 47.5,47.5 47.5,0" moire-10light5.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=11)>>" -draw "circle 47.5,47.5 47.5,0" moire-11light6.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=12)>>" -draw "circle 47.5,47.5 47.5,0" moire-12red.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=13)>>" -draw "circle 47.5,47.5 47.5,0" moire-13mauve.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=14)>>" -draw "circle 47.5,47.5 47.5,0" moire-14pink.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=15)>>" -draw "circle 47.5,47.5 47.5,0" moire-15peach.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=16)>>" -draw "circle 47.5,47.5 47.5,0" moire-16clay.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=17)>>" -draw "circle 47.5,47.5 47.5,0" moire-17yellow.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=18)>>" -draw "circle 47.5,47.5 47.5,0" moire-18green.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=19)>>" -draw "circle 47.5,47.5 47.5,0" moire-19teal.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=20)>>" -draw "circle 47.5,47.5 47.5,0" moire-20denim.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=21)>>" -draw "circle 47.5,47.5 47.5,0" moire-21royal.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=22)>>" -draw "circle 47.5,47.5 47.5,0" moire-22blue.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=23)>>" -draw "circle 47.5,47.5 47.5,0" moire-23indigo.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=24)>>" -draw "circle 47.5,47.5 47.5,0" moire-24lavender.png
-  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=25)>>" -draw "circle 47.5,47.5 47.5,0" moire-25purple.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=0)>>" -draw "circle 47.5,47.5 47.5,0" moire-00.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=1)>>" -draw "circle 47.5,47.5 47.5,0" moire-01.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=2)>>" -draw "circle 47.5,47.5 47.5,0" moire-02.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=3)>>" -draw "circle 47.5,47.5 47.5,0" moire-03.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=4)>>" -draw "circle 47.5,47.5 47.5,0" moire-04.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=5)>>" -draw "circle 47.5,47.5 47.5,0" moire-05.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=6)>>" -draw "circle 47.5,47.5 47.5,0" moire-06.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=7)>>" -draw "circle 47.5,47.5 47.5,0" moire-07.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=8)>>" -draw "circle 47.5,47.5 47.5,0" moire-08.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=9)>>" -draw "circle 47.5,47.5 47.5,0" moire-09.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=10)>>" -draw "circle 47.5,47.5 47.5,0" moire-10.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=11)>>" -draw "circle 47.5,47.5 47.5,0" moire-11.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=12)>>" -draw "circle 47.5,47.5 47.5,0" moire-12.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=13)>>" -draw "circle 47.5,47.5 47.5,0" moire-13.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=14)>>" -draw "circle 47.5,47.5 47.5,0" moire-14.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=15)>>" -draw "circle 47.5,47.5 47.5,0" moire-15.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=16)>>" -draw "circle 47.5,47.5 47.5,0" moire-16.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=17)>>" -draw "circle 47.5,47.5 47.5,0" moire-17.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=18)>>" -draw "circle 47.5,47.5 47.5,0" moire-18.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=19)>>" -draw "circle 47.5,47.5 47.5,0" moire-19.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=20)>>" -draw "circle 47.5,47.5 47.5,0" moire-20.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=21)>>" -draw "circle 47.5,47.5 47.5,0" moire-21.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=22)>>" -draw "circle 47.5,47.5 47.5,0" moire-22.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=23)>>" -draw "circle 47.5,47.5 47.5,0" moire-23.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=24)>>" -draw "circle 47.5,47.5 47.5,0" moire-24.png
+  convert -size 96x96 canvas:transparent -fill "<<tru-colors-list(num=25)>>" -draw "circle 47.5,47.5 47.5,0" moire-25.png
   convert -append moire-*.png layout.png
 #+end_src
 
