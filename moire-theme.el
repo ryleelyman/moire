@@ -269,15 +269,13 @@
      (magit-signature-untrusted                 (:foreground moire-blue))
      (magit-tag                                 (:foreground moire-yellow))
 
-     ;;; git gutter
+     ;;; diff-hl
 
-     (git-gutter:modified (:background moire-clay :foreground moire-clay))
-     (git-gutter:added    (:background moire-green :foreground moire-green))
-     (git-gutter:deleted  (:background moire-red :foreground moire-red))
+     (diff-hl-insert (:foreground moire-green))
+     (diff-hl-change (:foreground moire-clay))
+     (diff-hl-delete (:foreground moire-red))
 
-     (git-gutter-fr:modified (:inherit 'git-gutter:modified))
-     (git-gutter-fr:added (:inherit 'git-gutter:added))
-     (git-gutter-fr:deleted (:inherit 'git-gutter:deleted))
+     ;;; flyspell
 
      (flyspell-duplicate (:underline (:color moire-lavender :style 'wave)))
      (flyspell-incorrect (:underline (:color moire-red :style 'wave)))
